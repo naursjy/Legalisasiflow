@@ -1,0 +1,111 @@
+### Alur Kerja :
+
+('Admin') -> Make Workflow -> Add Stages or Tahapan -> Assignment User.
+('User') -> Login -> Uploud Evidence Per Tahapan.
+
+=> memastikan hanya user yang revelan dengan tugasnya.
+=> menghindari akses tidak sah.
+
+Menggunakan Pivot Tabel workflow_assigmnet-> Relasi many to many antara Workflow dan User.
+
+### Sampel Data :
+
+|| Buka database -> seeders -> Databaseseeder. = Gunakan akun yang didaftarkan.
+atau salin dibawah ini :
+
+### Akun Admin :
+
+Email : 'aaadddmmiiinn@example.com',
+Password : ('adminpassword'),
+
+### Akun User :
+
+Email : 'uusseerr@example.com',
+Password : ('userpassword'),
+
+## Flowchart Penggunaan Sistem Website :
+
+          +-------------------+
+          |       Start       |
+          |     (Login)       |
+          +-------------------+
+                  |
+                  v
+          +-------------------+
+          |  Check Role       |
+          | (Admin or User?)  |
+          +-------------------+
+          |
+          +-----------------+
+          |                 |
+          v                 v
++-------------------+     +-------------------+
+|     Admin Path    |     |     User Path     |
++-------------------+     +-------------------+
+          |                 |
+          v                 v
++-------------------+     +-------------------+
+| Create Workflow   |     | View Workflows    |
++-------------------+     +-------------------+
+          |                 |
+          v                 v
++-------------------+     +-------------------+
+| Create Steps      |     | Select Workflow   |
++-------------------+     +-------------------+
+          |                 |
+          v                 v
++-------------------+     +-------------------+
+|   End (Monitor)   |     | Select Step       |
++-------------------+     +-------------------+
+           |                         |
+           |                         v
+           |               +-------------------+
+           |               | Upload Evidence   |
+           |               +-------------------+
+           |                         |
+           |                         v
+           |               +-------------------+
+           |               |   End (Submit)    |
+           |               +-------------------+
+           |                   |
+            +-----------------+
+                    |
+                    v
+            +-------------------+
+            |      Logout       |
+            +-------------------+
+
+### Panduan Dalam menjalankan Aplikasi
+# Admin #
+1. Login (salin akun diatas).
+2. Tampilan dashboard langsung data workflow.
+3. Klik "Create Workflow".
+4. Isi Nama dan Deskripsi lalu Submit
+5. setelah tersimpan, klik view untuk melihat stage atau tahapan.
+6. jika ingin menambhakan stage, klik "add stage"
+7. isi form yang ditampilkan. setelahnya Submit.
+8. akan kembali ke tampilan view workflow.
+9. fitur logout akan mengarahkan langsung ke laman login kembali.
+% Fitur Delete
+10. untuk fitur delete, tinggal klik ikon sampah di kolom action di workflow akan terhapus datanya.
+11. untuk menghapus stage, pilih view terlebih dahulu, dan akan menampilkan card dengan tombol hapus dibawahnya.
+12. klik ikon sampah itu, stage atau tapahan akan terhapus.
+
+% Note : Untuk Assignment Admin pengumpalan data user.
+1. dihalaman dashboard yang menampilkan data workflow, pilih assign di kolom aksi.
+2. pilih user yang akan disetujui atau assignment.
+3. setelahnya, klik asiggn.
+
+
+# User #
+1. Login (salin akun diatas)
+2. Tampilan dashboard langsung data workflow assignment
+3. pada Kolom "Name" klik name tersebut.
+    contoh = "Legal Service Workflow" -> klik.
+4. isi evidence atau tahapan yang diperlukan dan diwajibkan ditampilan tersebut.
+5. setelah mengunggahnya, klik uploud agar data tersimpan.
+6. fitur lougout akan langsung mengarahkan kembali ke login.
+
+### Explain App Website LegalisasiFLow :
+aplikasi ini hanya prototype yang saya buat, dimana nantinya admin akan menambahkan flow atau kebutuhan layanan dan tahapan yang akan
+dikumpulkan oleh user melalui monitor website ini. admin dapat melakukan assignment untuk user sesuai kebutuhan layanan legalisasi.
