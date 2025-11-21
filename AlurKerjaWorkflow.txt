@@ -23,7 +23,7 @@ Password : ('adminpassword'),
 Email : 'uusseerr@example.com',
 Password : ('userpassword'),
 
-## Flowchart Penggunaan Sistem Website :
+## Flowchart Penggunaan Sistem Website : 
 
           +-------------------+
           |       Start       |
